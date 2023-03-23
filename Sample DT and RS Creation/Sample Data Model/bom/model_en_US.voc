@@ -1,0 +1,25 @@
+
+# cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Temperature
+cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Temperature#concept.label = Temperature
+cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Temperature.cold#instance.label = Cold
+cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Temperature.hot#instance.label = Hot
+cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Temperature.storm#instance.label = Storm
+cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Temperature.warm#instance.label = Warm
+
+# cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Weather
+cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Weather#concept.label = Weather
+cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Weather.Weather(java.lang.Long,boolean,cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Temperature)#phrase.navigation = a new {Weather} where {0, Rain Forecast} {1, Storm Alert} {2, Temperature}
+cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Weather.rainForecast#phrase.action = set the Rain Forecast of {this} to {Rain Forecast}
+cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Weather.rainForecast#phrase.addition_setter = add {Rain Forecast} to the Rain Forecast of {this}
+cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Weather.rainForecast#phrase.navigation = {Rain Forecast} of {this}
+cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Weather.rainForecast#phrase.subtraction_setter = subtract {Rain Forecast} from the Rain Forecast of {this}
+cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Weather.stormAlert#phrase.action[0] = {this} gets Storm Alert only if {Storm Alert}
+cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Weather.stormAlert#phrase.action[1] = make it {Storm Alert} that {this} is Storm Alert
+cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Weather.stormAlert#phrase.action[1].deprecated = true
+cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Weather.stormAlert#phrase.navigation = {this} is Storm Alert
+cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Weather.stormAlert#phrase.negative_predicate = {this} is not Storm Alert
+cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Weather.stormAlert#phrase.negative_predicate_setter = {this} does not get Storm Alert
+cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Weather.stormAlert#phrase.positive_predicate_setter = {this} gets Storm Alert
+cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Weather.temperature#phrase.action = set the Temperature of {this} to {Temperature}
+cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Weather.temperature#phrase.clearer = clear the Temperature of {this}
+cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Weather.temperature#phrase.navigation = {Temperature} of {this}

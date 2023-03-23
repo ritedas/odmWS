@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Storm Rule</name>
+  <uuid>a82d229b-9e72-4d30-952d-2f308d6802d4</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if 
+ Weather is Storm Alert 
+ then 
+ set decision to "Stay Home! There is a Storm Alert";]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

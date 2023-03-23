@@ -1,0 +1,51 @@
+
+package cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel;
+
+
+public class Temperature
+        extends java.lang.Enum
+        property "ads.typeId" "3"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Temperature"
+        property "de.generated" "true"
+{
+    domain {static cold, static hot, static storm, static warm}
+    public static final readonly cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Temperature cold
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Cold";
+    public static final readonly cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Temperature hot
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Hot";
+    public static final readonly cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Temperature storm
+                property "ads.attributeId" "4"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Storm";
+    public static final readonly cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Temperature warm
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Warm";
+}
+
+public class Weather
+        property "ads.typeId" "4"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Weather"
+        property "de.generated" "true"
+{
+    public java.lang.Long rainForecast
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "RainForecast"
+                property update "true";
+    public boolean stormAlert
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "StormAlert"
+                property update "true";
+    public cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Temperature temperature
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Temperature"
+                property update "true";
+    public Weather(java.lang.Long rainForecast, boolean stormAlert, cp4admin.sample_odm.sample_dt_and_rs_creation.sampledatamodel.Temperature temperature)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public Weather()
+                property "dataio.default" "true";
+}
+
