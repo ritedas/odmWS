@@ -1,0 +1,63 @@
+
+# decisions.techpreview_samples.shipment_pricing_project.mydata.CustomerStatus
+decisions.techpreview_samples.shipment_pricing_project.mydata.CustomerStatus#concept.label = Customer Status
+decisions.techpreview_samples.shipment_pricing_project.mydata.CustomerStatus.bronze#instance.label = Bronze
+decisions.techpreview_samples.shipment_pricing_project.mydata.CustomerStatus.gold#instance.label = Gold
+decisions.techpreview_samples.shipment_pricing_project.mydata.CustomerStatus.silver#instance.label = Silver
+
+# decisions.techpreview_samples.shipment_pricing_project.mydata.Dimension
+decisions.techpreview_samples.shipment_pricing_project.mydata.Dimension#concept.documentation = 
+decisions.techpreview_samples.shipment_pricing_project.mydata.Dimension#concept.label = Dimension
+decisions.techpreview_samples.shipment_pricing_project.mydata.Dimension.letter#instance.label = Letter
+decisions.techpreview_samples.shipment_pricing_project.mydata.Dimension.pack1#instance.label = Pack 1
+decisions.techpreview_samples.shipment_pricing_project.mydata.Dimension.pack2#instance.label = Pack 2
+decisions.techpreview_samples.shipment_pricing_project.mydata.Dimension.pack3#instance.label = Pack 3
+
+# decisions.techpreview_samples.shipment_pricing_project.mydata.Method
+decisions.techpreview_samples.shipment_pricing_project.mydata.Method#concept.label = Method
+decisions.techpreview_samples.shipment_pricing_project.mydata.Method.Method(boolean,decisions.techpreview_samples.shipment_pricing_project.mydata.Pickup,decisions.techpreview_samples.shipment_pricing_project.mydata.Transport)#phrase.navigation = a new {Method} where {0, next day} {1, pickup} {2, transport}
+decisions.techpreview_samples.shipment_pricing_project.mydata.Method.nextDay#phrase.action[0] = {this} gets next day only if {next day}
+decisions.techpreview_samples.shipment_pricing_project.mydata.Method.nextDay#phrase.action[1] = make it {next day} that {this} is next day
+decisions.techpreview_samples.shipment_pricing_project.mydata.Method.nextDay#phrase.action[1].deprecated = true
+decisions.techpreview_samples.shipment_pricing_project.mydata.Method.nextDay#phrase.navigation = {this} is next day
+decisions.techpreview_samples.shipment_pricing_project.mydata.Method.nextDay#phrase.negative_predicate = {this} is not next day
+decisions.techpreview_samples.shipment_pricing_project.mydata.Method.nextDay#phrase.negative_predicate_setter = {this} does not get next day
+decisions.techpreview_samples.shipment_pricing_project.mydata.Method.nextDay#phrase.positive_predicate_setter = {this} gets next day
+decisions.techpreview_samples.shipment_pricing_project.mydata.Method.pickup#phrase.action = set the pickup of {this} to {pickup}
+decisions.techpreview_samples.shipment_pricing_project.mydata.Method.pickup#phrase.clearer = clear the pickup of {this}
+decisions.techpreview_samples.shipment_pricing_project.mydata.Method.pickup#phrase.navigation = {pickup} of {this}
+decisions.techpreview_samples.shipment_pricing_project.mydata.Method.transport#phrase.action = set the transport of {this} to {transport}
+decisions.techpreview_samples.shipment_pricing_project.mydata.Method.transport#phrase.clearer = clear the transport of {this}
+decisions.techpreview_samples.shipment_pricing_project.mydata.Method.transport#phrase.navigation = {transport} of {this}
+
+# decisions.techpreview_samples.shipment_pricing_project.mydata.Pickup
+decisions.techpreview_samples.shipment_pricing_project.mydata.Pickup#concept.label = Pickup
+decisions.techpreview_samples.shipment_pricing_project.mydata.Pickup.dropoff#instance.label = Dropoff
+decisions.techpreview_samples.shipment_pricing_project.mydata.Pickup.pickup#instance.label = Pickup
+
+# decisions.techpreview_samples.shipment_pricing_project.mydata.Result
+decisions.techpreview_samples.shipment_pricing_project.mydata.Result#concept.label = Result
+decisions.techpreview_samples.shipment_pricing_project.mydata.Result.ETA#phrase.action = set the ETA of {this} to {ETA}
+decisions.techpreview_samples.shipment_pricing_project.mydata.Result.ETA#phrase.clearer = clear the ETA of {this}
+decisions.techpreview_samples.shipment_pricing_project.mydata.Result.ETA#phrase.navigation = {ETA} of {this}
+decisions.techpreview_samples.shipment_pricing_project.mydata.Result.Result(ilog.rules.brl.Time,double)#phrase.navigation = a new {Result} where {0, ETA} {1, price}
+decisions.techpreview_samples.shipment_pricing_project.mydata.Result.price#phrase.action = set the price of {this} to {price}
+decisions.techpreview_samples.shipment_pricing_project.mydata.Result.price#phrase.addition_setter = add {price} to the price of {this}
+decisions.techpreview_samples.shipment_pricing_project.mydata.Result.price#phrase.navigation = {price} of {this}
+decisions.techpreview_samples.shipment_pricing_project.mydata.Result.price#phrase.subtraction_setter = subtract {price} from the price of {this}
+
+# decisions.techpreview_samples.shipment_pricing_project.mydata.Shipment
+decisions.techpreview_samples.shipment_pricing_project.mydata.Shipment#concept.label = Shipment
+decisions.techpreview_samples.shipment_pricing_project.mydata.Shipment.Shipment(decisions.techpreview_samples.shipment_pricing_project.mydata.Dimension,double)#phrase.navigation = a new {Shipment} where {0, size} {1, weight}
+decisions.techpreview_samples.shipment_pricing_project.mydata.Shipment.size#phrase.action = set the size of {this} to {size}
+decisions.techpreview_samples.shipment_pricing_project.mydata.Shipment.size#phrase.clearer = clear the size of {this}
+decisions.techpreview_samples.shipment_pricing_project.mydata.Shipment.size#phrase.navigation = {size} of {this}
+decisions.techpreview_samples.shipment_pricing_project.mydata.Shipment.weight#phrase.action = set the weight of {this} to {weight}
+decisions.techpreview_samples.shipment_pricing_project.mydata.Shipment.weight#phrase.addition_setter = add {weight} to the weight of {this}
+decisions.techpreview_samples.shipment_pricing_project.mydata.Shipment.weight#phrase.navigation = {weight} of {this}
+decisions.techpreview_samples.shipment_pricing_project.mydata.Shipment.weight#phrase.subtraction_setter = subtract {weight} from the weight of {this}
+
+# decisions.techpreview_samples.shipment_pricing_project.mydata.Transport
+decisions.techpreview_samples.shipment_pricing_project.mydata.Transport#concept.label = Transport
+decisions.techpreview_samples.shipment_pricing_project.mydata.Transport.air#instance.label = Air
+decisions.techpreview_samples.shipment_pricing_project.mydata.Transport.ground#instance.label = Ground

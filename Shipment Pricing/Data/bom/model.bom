@@ -1,0 +1,143 @@
+
+package decisions.techpreview_samples.shipment_pricing_project.mydata;
+
+
+public class CustomerStatus
+        extends java.lang.Enum
+        property "ads.typeId" "3"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "CustomerStatus"
+        property "de.generated" "true"
+{
+    domain {static bronze, static gold, static silver}
+    public static final readonly decisions.techpreview_samples.shipment_pricing_project.mydata.CustomerStatus bronze
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Bronze";
+    public static final readonly decisions.techpreview_samples.shipment_pricing_project.mydata.CustomerStatus gold
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Gold";
+    public static final readonly decisions.techpreview_samples.shipment_pricing_project.mydata.CustomerStatus silver
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Silver";
+}
+
+public class Dimension
+        extends java.lang.Enum
+        property "ads.typeId" "4"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Dimension"
+        property "de.generated" "true"
+{
+    domain {static letter, static pack1, static pack2, static pack3}
+    public static final readonly decisions.techpreview_samples.shipment_pricing_project.mydata.Dimension letter
+                property "ads.attributeId" "4"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Letter";
+    public static final readonly decisions.techpreview_samples.shipment_pricing_project.mydata.Dimension pack1
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Pack1";
+    public static final readonly decisions.techpreview_samples.shipment_pricing_project.mydata.Dimension pack2
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Pack2";
+    public static final readonly decisions.techpreview_samples.shipment_pricing_project.mydata.Dimension pack3
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Pack3";
+}
+
+public class Method
+        property "ads.typeId" "5"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Method"
+        property "de.generated" "true"
+{
+    public boolean nextDay
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "nextDay"
+                property update "true";
+    public decisions.techpreview_samples.shipment_pricing_project.mydata.Pickup pickup
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "pickup"
+                property update "true";
+    public decisions.techpreview_samples.shipment_pricing_project.mydata.Transport transport
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "transport"
+                property update "true";
+    public Method(boolean nextDay, decisions.techpreview_samples.shipment_pricing_project.mydata.Pickup pickup, decisions.techpreview_samples.shipment_pricing_project.mydata.Transport transport)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public Method()
+                property "dataio.default" "true";
+}
+
+public class Pickup
+        extends java.lang.Enum
+        property "ads.typeId" "1"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Pickup"
+        property "de.generated" "true"
+{
+    domain {static dropoff, static pickup}
+    public static final readonly decisions.techpreview_samples.shipment_pricing_project.mydata.Pickup dropoff
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Dropoff";
+    public static final readonly decisions.techpreview_samples.shipment_pricing_project.mydata.Pickup pickup
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Pickup";
+}
+
+public class Result
+        property "ads.typeId" "6"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Result"
+        property "de.generated" "true"
+{
+    public ilog.rules.brl.Time ETA
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "ETA"
+                property update "true";
+    public double price
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "price"
+                property update "true";
+    public Result(ilog.rules.brl.Time ETA, double price)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public Result()
+                property "dataio.default" "true";
+}
+
+public class Shipment
+        property "ads.typeId" "7"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Shipment"
+        property "de.generated" "true"
+{
+    public decisions.techpreview_samples.shipment_pricing_project.mydata.Dimension size
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "size"
+                property update "true";
+    public double weight
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "weight"
+                property update "true";
+    public Shipment(decisions.techpreview_samples.shipment_pricing_project.mydata.Dimension size, double weight)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public Shipment()
+                property "dataio.default" "true";
+}
+
+public class Transport
+        extends java.lang.Enum
+        property "ads.typeId" "2"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Transport"
+        property "de.generated" "true"
+{
+    domain {static air, static ground}
+    public static final readonly decisions.techpreview_samples.shipment_pricing_project.mydata.Transport air
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Air";
+    public static final readonly decisions.techpreview_samples.shipment_pricing_project.mydata.Transport ground
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Ground";
+}
+
